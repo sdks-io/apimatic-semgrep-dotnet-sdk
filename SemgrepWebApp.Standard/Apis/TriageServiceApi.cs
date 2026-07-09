@@ -28,10 +28,10 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="deploymentSlug">Required parameter: .</param>
         /// <param name="body">Required parameter: .</param>
         /// <returns>Returns the ApiResponse of Models.BulkTriageResponse response from the API call.</returns>
-        public ApiResponse<Models.BulkTriageResponse> TriageServiceBulkTriage(
+        public ApiResponse<Models.BulkTriageResponse> BulkTriage(
                 string deploymentSlug,
                 Models.BulkTriageRequest body)
-            => CoreHelper.RunTask(TriageServiceBulkTriageAsync(deploymentSlug, body));
+            => CoreHelper.RunTask(BulkTriageAsync(deploymentSlug, body));
 
         /// <summary>
         /// Bulk triage your findings. You can select the findings to triage by passing in a list of finding IDs as issue_ids, or by passing in filter query parameters. You must specify the issue_type of the findings you want to bulk triage. One of new_triage_state or new_note is required. If specifying a new_triage_reason, you must also use new_triage_state=ignored. Some filters only apply for findings associated with a given product.
@@ -40,7 +40,7 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="body">Required parameter: .</param>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of Models.BulkTriageResponse response from the API call.</returns>
-        public async Task<ApiResponse<Models.BulkTriageResponse>> TriageServiceBulkTriageAsync(
+        public async Task<ApiResponse<Models.BulkTriageResponse>> BulkTriageAsync(
                 string deploymentSlug,
                 Models.BulkTriageRequest body,
                 CancellationToken cancellationToken = default)

@@ -12,11 +12,11 @@ MiscServiceApi miscServiceApi = client.MiscServiceApi;
 
 ## Methods
 
-* [Misc Service Get Bootstrap Sms Vpc](../../doc/controllers/misc-service.md#misc-service-get-bootstrap-sms-vpc)
-* [Misc Service Ping](../../doc/controllers/misc-service.md#misc-service-ping)
+* [Get Bootstrap Sms Vpc](../../doc/controllers/misc-service.md#get-bootstrap-sms-vpc)
+* [Ping](../../doc/controllers/misc-service.md#ping)
 
 
-# Misc Service Get Bootstrap Sms Vpc
+# Get Bootstrap Sms Vpc
 
 VPC support for Managed Scans is in private beta.
 
@@ -30,7 +30,7 @@ See the original AWS cloudformation template format at https://docs.aws.amazon.c
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-MiscServiceGetBootstrapSmsVpcAsync()
+GetBootstrapSmsVpcAsync()
 ```
 
 ## Response Type
@@ -44,7 +44,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ```csharp
 try
 {
-    ApiResponse<ProtosOpenapiV1GetBootstrapSmsVpcResponse> result = await miscServiceApi.MiscServiceGetBootstrapSmsVpcAsync();
+    ApiResponse<ProtosOpenapiV1GetBootstrapSmsVpcResponse> result = await miscServiceApi.GetBootstrapSmsVpcAsync();
 }
 catch (ApiException e)
 {
@@ -53,14 +53,14 @@ catch (ApiException e)
 ```
 
 
-# Misc Service Ping
+# Ping
 
 Use to ping the server and assert liveness.
 
 :information_source: **Note** This endpoint does not require authentication.
 
 ```csharp
-MiscServicePingAsync()
+PingAsync()
 ```
 
 ## Response Type
@@ -74,7 +74,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ```csharp
 try
 {
-    ApiResponse<object> result = await miscServiceApi.MiscServicePingAsync();
+    ApiResponse<object> result = await miscServiceApi.PingAsync();
 }
 catch (ApiException e)
 {

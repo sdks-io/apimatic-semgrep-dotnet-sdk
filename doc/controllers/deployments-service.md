@@ -11,14 +11,14 @@ DeploymentsServiceApi deploymentsServiceApi = client.DeploymentsServiceApi;
 `DeploymentsServiceApi`
 
 
-# Deployments Service List Deployments
+# List Deployments
 
 Request the deployments your auth can access.
 
 Currently available auth scope does not extend over more than one deployment. This endpoint returns the single deployment your token can access. The endpoint additionally returns links to related resources available on this API.
 
 ```csharp
-DeploymentsServiceListDeploymentsAsync()
+ListDeploymentsAsync()
 ```
 
 ## Authentication
@@ -36,7 +36,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 ```csharp
 try
 {
-    ApiResponse<ProtosOpenapiV1ListDeploymentsResponse> result = await deploymentsServiceApi.DeploymentsServiceListDeploymentsAsync();
+    ApiResponse<ProtosOpenapiV1ListDeploymentsResponse> result = await deploymentsServiceApi.ListDeploymentsAsync();
 }
 catch (ApiException e)
 {

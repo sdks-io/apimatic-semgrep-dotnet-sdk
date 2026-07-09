@@ -14,17 +14,17 @@ SupplyChainServiceApi supplyChainServiceApi = client.SupplyChainServiceApi;
 
 ## Methods
 
-* [Supply Chain Service List Dependencies](../../doc/controllers/supply-chain-service.md#supply-chain-service-list-dependencies)
-* [Supply Chain Service List Repositories for Dependencies](../../doc/controllers/supply-chain-service.md#supply-chain-service-list-repositories-for-dependencies)
-* [Supply Chain Service List Lockfiles for Dependencies](../../doc/controllers/supply-chain-service.md#supply-chain-service-list-lockfiles-for-dependencies)
-* [Supply Chain Service Create Sbom Export](../../doc/controllers/supply-chain-service.md#supply-chain-service-create-sbom-export)
-* [Supply Chain Service Get Sbom Export](../../doc/controllers/supply-chain-service.md#supply-chain-service-get-sbom-export)
+* [List Dependencies](../../doc/controllers/supply-chain-service.md#list-dependencies)
+* [List Repositories for Dependencies](../../doc/controllers/supply-chain-service.md#list-repositories-for-dependencies)
+* [List Lockfiles for Dependencies](../../doc/controllers/supply-chain-service.md#list-lockfiles-for-dependencies)
+* [Create Sbom Export](../../doc/controllers/supply-chain-service.md#create-sbom-export)
+* [Get Sbom Export](../../doc/controllers/supply-chain-service.md#get-sbom-export)
 
 
-# Supply Chain Service List Dependencies
+# List Dependencies
 
 ```csharp
-SupplyChainServiceListDependenciesAsync(
+ListDependenciesAsync(
     string deploymentId,
     Models.ListDependenciesRequest body)
 ```
@@ -58,7 +58,7 @@ ListDependenciesRequest body = new ListDependenciesRequest
 
 try
 {
-    ApiResponse<ListDependenciesResponse> result = await supplyChainServiceApi.SupplyChainServiceListDependenciesAsync(
+    ApiResponse<ListDependenciesResponse> result = await supplyChainServiceApi.ListDependenciesAsync(
         deploymentId,
         body
     );
@@ -70,10 +70,10 @@ catch (ApiException e)
 ```
 
 
-# Supply Chain Service List Repositories for Dependencies
+# List Repositories for Dependencies
 
 ```csharp
-SupplyChainServiceListRepositoriesForDependenciesAsync(
+ListRepositoriesForDependenciesAsync(
     string deploymentId,
     Models.ListRepositoriesForDependenciesRequest body)
 ```
@@ -107,7 +107,7 @@ ListRepositoriesForDependenciesRequest body = new ListRepositoriesForDependencie
 
 try
 {
-    ApiResponse<ListRepositoriesForDependenciesResponse> result = await supplyChainServiceApi.SupplyChainServiceListRepositoriesForDependenciesAsync(
+    ApiResponse<ListRepositoriesForDependenciesResponse> result = await supplyChainServiceApi.ListRepositoriesForDependenciesAsync(
         deploymentId,
         body
     );
@@ -119,10 +119,10 @@ catch (ApiException e)
 ```
 
 
-# Supply Chain Service List Lockfiles for Dependencies
+# List Lockfiles for Dependencies
 
 ```csharp
-SupplyChainServiceListLockfilesForDependenciesAsync(
+ListLockfilesForDependenciesAsync(
     string deploymentId,
     string repositoryId,
     Models.ListLockfilesForDependenciesRequest body)
@@ -160,7 +160,7 @@ ListLockfilesForDependenciesRequest body = new ListLockfilesForDependenciesReque
 
 try
 {
-    ApiResponse<ListLockfilesForDependenciesResponse> result = await supplyChainServiceApi.SupplyChainServiceListLockfilesForDependenciesAsync(
+    ApiResponse<ListLockfilesForDependenciesResponse> result = await supplyChainServiceApi.ListLockfilesForDependenciesAsync(
         deploymentId,
         repositoryId,
         body
@@ -173,10 +173,10 @@ catch (ApiException e)
 ```
 
 
-# Supply Chain Service Create Sbom Export
+# Create Sbom Export
 
 ```csharp
-SupplyChainServiceCreateSbomExportAsync(
+CreateSbomExportAsync(
     string deploymentId,
     Models.CreateSbomExportRequest body)
 ```
@@ -213,7 +213,7 @@ CreateSbomExportRequest body = new CreateSbomExportRequest
 
 try
 {
-    ApiResponse<CreateSbomExportResponse> result = await supplyChainServiceApi.SupplyChainServiceCreateSbomExportAsync(
+    ApiResponse<CreateSbomExportResponse> result = await supplyChainServiceApi.CreateSbomExportAsync(
         deploymentId,
         body
     );
@@ -225,10 +225,10 @@ catch (ApiException e)
 ```
 
 
-# Supply Chain Service Get Sbom Export
+# Get Sbom Export
 
 ```csharp
-SupplyChainServiceGetSbomExportAsync(
+GetSbomExportAsync(
     string deploymentId,
     string taskToken)
 ```
@@ -257,7 +257,7 @@ string deploymentId = "123";
 string taskToken = "taskToken2";
 try
 {
-    ApiResponse<GetSbomExportResponse> result = await supplyChainServiceApi.SupplyChainServiceGetSbomExportAsync(
+    ApiResponse<GetSbomExportResponse> result = await supplyChainServiceApi.GetSbomExportAsync(
         deploymentId,
         taskToken
     );

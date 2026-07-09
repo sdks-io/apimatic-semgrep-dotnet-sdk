@@ -27,8 +27,8 @@ namespace SemgrepWebApp.Standard.Apis
         /// Currently available auth scope does not extend over more than one deployment. This endpoint returns the single deployment your token can access. The endpoint additionally returns links to related resources available on this API.
         /// </summary>
         /// <returns>Returns the ApiResponse of Models.ProtosOpenapiV1ListDeploymentsResponse response from the API call.</returns>
-        public ApiResponse<Models.ProtosOpenapiV1ListDeploymentsResponse> DeploymentsServiceListDeployments()
-            => CoreHelper.RunTask(DeploymentsServiceListDeploymentsAsync());
+        public ApiResponse<Models.ProtosOpenapiV1ListDeploymentsResponse> ListDeployments()
+            => CoreHelper.RunTask(ListDeploymentsAsync());
 
         /// <summary>
         /// Request the deployments your auth can access.
@@ -36,7 +36,7 @@ namespace SemgrepWebApp.Standard.Apis
         /// </summary>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of Models.ProtosOpenapiV1ListDeploymentsResponse response from the API call.</returns>
-        public async Task<ApiResponse<Models.ProtosOpenapiV1ListDeploymentsResponse>> DeploymentsServiceListDeploymentsAsync(CancellationToken cancellationToken = default)
+        public async Task<ApiResponse<Models.ProtosOpenapiV1ListDeploymentsResponse>> ListDeploymentsAsync(CancellationToken cancellationToken = default)
             => await CreateApiCall<Models.ProtosOpenapiV1ListDeploymentsResponse>()
               .RequestBuilder(requestBuilder => requestBuilder
                   .Setup(HttpMethod.Get, "/api/v1/deployments")

@@ -11,12 +11,12 @@ FindingsServiceApi findingsServiceApi = client.FindingsServiceApi;
 `FindingsServiceApi`
 
 
-# Findings Service List Findings
+# List Findings
 
 Request the list of code, supply chain, or AI-powered scan findings in an organization, paginated in pages of 100 entries and limited by the `since` timestamp. Findings are returned by `relevant_since` descending (see `since` in the Query Parameters list). Examples: List SAST findings with pagination, List SCA findings since timestamp, List AI-powered scan findings, List findings with filters.
 
 ```csharp
-FindingsServiceListFindingsAsync(
+ListFindingsAsync(
     string deploymentSlug,
     Models.IssueType2? issueType = Models.IssueType2.Sast,
     double? since = null,
@@ -133,7 +133,7 @@ List<string> componentTags = new List<string>
 bool? isMalicious = true;
 try
 {
-    ApiResponse<ApiV1DeploymentsFindingsResponse> result = await findingsServiceApi.FindingsServiceListFindingsAsync(
+    ApiResponse<ApiV1DeploymentsFindingsResponse> result = await findingsServiceApi.ListFindingsAsync(
         deploymentSlug,
         issueType,
         since,

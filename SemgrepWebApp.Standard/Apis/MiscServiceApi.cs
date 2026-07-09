@@ -30,8 +30,8 @@ namespace SemgrepWebApp.Standard.Apis
         /// See the original AWS cloudformation template format at https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-formats.html.
         /// </summary>
         /// <returns>Returns the ApiResponse of Models.ProtosOpenapiV1GetBootstrapSmsVpcResponse response from the API call.</returns>
-        public ApiResponse<Models.ProtosOpenapiV1GetBootstrapSmsVpcResponse> MiscServiceGetBootstrapSmsVpc()
-            => CoreHelper.RunTask(MiscServiceGetBootstrapSmsVpcAsync());
+        public ApiResponse<Models.ProtosOpenapiV1GetBootstrapSmsVpcResponse> GetBootstrapSmsVpc()
+            => CoreHelper.RunTask(GetBootstrapSmsVpcAsync());
 
         /// <summary>
         /// VPC support for Managed Scans is in private beta.
@@ -42,7 +42,7 @@ namespace SemgrepWebApp.Standard.Apis
         /// </summary>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of Models.ProtosOpenapiV1GetBootstrapSmsVpcResponse response from the API call.</returns>
-        public async Task<ApiResponse<Models.ProtosOpenapiV1GetBootstrapSmsVpcResponse>> MiscServiceGetBootstrapSmsVpcAsync(CancellationToken cancellationToken = default)
+        public async Task<ApiResponse<Models.ProtosOpenapiV1GetBootstrapSmsVpcResponse>> GetBootstrapSmsVpcAsync(CancellationToken cancellationToken = default)
             => await CreateApiCall<Models.ProtosOpenapiV1GetBootstrapSmsVpcResponse>()
               .RequestBuilder(requestBuilder => requestBuilder
                   .Setup(HttpMethod.Get, "/api/v1/bootstrap-sms-vpc"))
@@ -52,15 +52,15 @@ namespace SemgrepWebApp.Standard.Apis
         /// Use to ping the server and assert liveness.
         /// </summary>
         /// <returns>Returns the ApiResponse of object response from the API call.</returns>
-        public ApiResponse<object> MiscServicePing()
-            => CoreHelper.RunTask(MiscServicePingAsync());
+        public ApiResponse<object> Ping()
+            => CoreHelper.RunTask(PingAsync());
 
         /// <summary>
         /// Use to ping the server and assert liveness.
         /// </summary>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of object response from the API call.</returns>
-        public async Task<ApiResponse<object>> MiscServicePingAsync(CancellationToken cancellationToken = default)
+        public async Task<ApiResponse<object>> PingAsync(CancellationToken cancellationToken = default)
             => await CreateApiCall<object>()
               .RequestBuilder(requestBuilder => requestBuilder
                   .Setup(HttpMethod.Get, "/api/v1/ping"))

@@ -11,10 +11,10 @@ SecretsServiceApi secretsServiceApi = client.SecretsServiceApi;
 `SecretsServiceApi`
 
 
-# Secrets Service List Secrets Path
+# List Secrets Path
 
 ```csharp
-SecretsServiceListSecretsPathAsync(
+ListSecretsPathAsync(
     string deploymentId,
     string cursor = null,
     long? limit = null,
@@ -55,7 +55,7 @@ string deploymentId = "123";
 Status8? status = Status8.FindingStatusUnspecified;
 try
 {
-    ApiResponse<ProtosOpenapiV1ListSecretsPathResponse> result = await secretsServiceApi.SecretsServiceListSecretsPathAsync(
+    ApiResponse<ProtosOpenapiV1ListSecretsPathResponse> result = await secretsServiceApi.ListSecretsPathAsync(
         deploymentId,
         null,
         null,

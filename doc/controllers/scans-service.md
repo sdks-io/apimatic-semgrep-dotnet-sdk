@@ -12,16 +12,16 @@ ScansServiceApi scansServiceApi = client.ScansServiceApi;
 
 ## Methods
 
-* [Scans Service Get Scan](../../doc/controllers/scans-service.md#scans-service-get-scan)
-* [Scans Service Search Scans](../../doc/controllers/scans-service.md#scans-service-search-scans)
+* [Get Scan](../../doc/controllers/scans-service.md#get-scan)
+* [Search Scans](../../doc/controllers/scans-service.md#search-scans)
 
 
-# Scans Service Get Scan
+# Get Scan
 
 Request the details of a scan including the associated deployment, repository, and commit information.
 
 ```csharp
-ScansServiceGetScanAsync(
+GetScanAsync(
     string deploymentId,
     string scanId)
 ```
@@ -50,7 +50,7 @@ string deploymentId = "123";
 string scanId = "456";
 try
 {
-    ApiResponse<ProtosOpenapiV1GetScanResponse> result = await scansServiceApi.ScansServiceGetScanAsync(
+    ApiResponse<ProtosOpenapiV1GetScanResponse> result = await scansServiceApi.GetScanAsync(
         deploymentId,
         scanId
     );
@@ -62,12 +62,12 @@ catch (ApiException e)
 ```
 
 
-# Scans Service Search Scans
+# Search Scans
 
 List the scans associated with a particular repository over the past 30 days.
 
 ```csharp
-ScansServiceSearchScansAsync(
+SearchScansAsync(
     string deploymentId,
     Models.SearchScansRequest body)
 ```
@@ -100,7 +100,7 @@ SearchScansRequest body = new SearchScansRequest
 
 try
 {
-    ApiResponse<ProtosOpenapiV1SearchScansResponse> result = await scansServiceApi.ScansServiceSearchScansAsync(
+    ApiResponse<ProtosOpenapiV1SearchScansResponse> result = await scansServiceApi.SearchScansAsync(
         deploymentId,
         body
     );

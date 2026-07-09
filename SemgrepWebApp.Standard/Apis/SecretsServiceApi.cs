@@ -26,7 +26,7 @@ namespace SemgrepWebApp.Standard.Apis
         internal SecretsServiceApi(GlobalConfiguration globalConfiguration) : base(globalConfiguration) { }
 
         /// <summary>
-        /// SecretsService_ListSecretsPath EndPoint.
+        /// ListSecretsPath EndPoint.
         /// </summary>
         /// <param name="deploymentId">Required parameter: .</param>
         /// <param name="cursor">Optional parameter: .</param>
@@ -37,7 +37,7 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="severity">Optional parameter: .</param>
         /// <param name="repo">Optional parameter: .</param>
         /// <returns>Returns the ApiResponse of Models.ProtosOpenapiV1ListSecretsPathResponse response from the API call.</returns>
-        public ApiResponse<Models.ProtosOpenapiV1ListSecretsPathResponse> SecretsServiceListSecretsPath(
+        public ApiResponse<Models.ProtosOpenapiV1ListSecretsPathResponse> ListSecretsPath(
                 string deploymentId,
                 string cursor = null,
                 long? limit = null,
@@ -46,10 +46,10 @@ namespace SemgrepWebApp.Standard.Apis
                 Models.Status8? status = Models.Status8.FindingStatusUnspecified,
                 List<Models.Severity5> severity = null,
                 List<string> repo = null)
-            => CoreHelper.RunTask(SecretsServiceListSecretsPathAsync(deploymentId, cursor, limit, since, validationState, status, severity, repo));
+            => CoreHelper.RunTask(ListSecretsPathAsync(deploymentId, cursor, limit, since, validationState, status, severity, repo));
 
         /// <summary>
-        /// SecretsService_ListSecretsPath EndPoint.
+        /// ListSecretsPath EndPoint.
         /// </summary>
         /// <param name="deploymentId">Required parameter: .</param>
         /// <param name="cursor">Optional parameter: .</param>
@@ -61,7 +61,7 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="repo">Optional parameter: .</param>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of Models.ProtosOpenapiV1ListSecretsPathResponse response from the API call.</returns>
-        public async Task<ApiResponse<Models.ProtosOpenapiV1ListSecretsPathResponse>> SecretsServiceListSecretsPathAsync(
+        public async Task<ApiResponse<Models.ProtosOpenapiV1ListSecretsPathResponse>> ListSecretsPathAsync(
                 string deploymentId,
                 string cursor = null,
                 long? limit = null,

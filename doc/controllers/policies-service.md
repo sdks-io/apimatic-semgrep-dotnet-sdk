@@ -12,15 +12,15 @@ PoliciesServiceApi policiesServiceApi = client.PoliciesServiceApi;
 
 ## Methods
 
-* [Policies Service List Policies](../../doc/controllers/policies-service.md#policies-service-list-policies)
-* [Policies Service List Policy Rules](../../doc/controllers/policies-service.md#policies-service-list-policy-rules)
-* [Policies Service Update Policy](../../doc/controllers/policies-service.md#policies-service-update-policy)
+* [List Policies](../../doc/controllers/policies-service.md#list-policies)
+* [List Policy Rules](../../doc/controllers/policies-service.md#list-policy-rules)
+* [Update Policy](../../doc/controllers/policies-service.md#update-policy)
 
 
-# Policies Service List Policies
+# List Policies
 
 ```csharp
-PoliciesServiceListPoliciesAsync(
+ListPoliciesAsync(
     string deploymentId)
 ```
 
@@ -46,7 +46,7 @@ This method returns an [`ApiResponse`](../../doc/api-response.md) instance. The 
 string deploymentId = "123";
 try
 {
-    ApiResponse<ProtosOpenapiV1ListPoliciesResponse> result = await policiesServiceApi.PoliciesServiceListPoliciesAsync(deploymentId);
+    ApiResponse<ProtosOpenapiV1ListPoliciesResponse> result = await policiesServiceApi.ListPoliciesAsync(deploymentId);
 }
 catch (ApiException e)
 {
@@ -55,10 +55,10 @@ catch (ApiException e)
 ```
 
 
-# Policies Service List Policy Rules
+# List Policy Rules
 
 ```csharp
-PoliciesServiceListPolicyRulesAsync(
+ListPolicyRulesAsync(
     string deploymentId,
     string policyId,
     string cursor = null,
@@ -91,7 +91,7 @@ string deploymentId = "123";
 string policyId = "456";
 try
 {
-    ApiResponse<ProtosOpenapiV1ListPolicyRulesResponse> result = await policiesServiceApi.PoliciesServiceListPolicyRulesAsync(
+    ApiResponse<ProtosOpenapiV1ListPolicyRulesResponse> result = await policiesServiceApi.ListPolicyRulesAsync(
         deploymentId,
         policyId
     );
@@ -103,10 +103,10 @@ catch (ApiException e)
 ```
 
 
-# Policies Service Update Policy
+# Update Policy
 
 ```csharp
-PoliciesServiceUpdatePolicyAsync(
+UpdatePolicyAsync(
     string deploymentId,
     string policyId,
     Models.UpdatePolicyRequest body)
@@ -145,7 +145,7 @@ UpdatePolicyRequest body = new UpdatePolicyRequest
 
 try
 {
-    ApiResponse<ProtosOpenapiV1UpdatePolicyResponse> result = await policiesServiceApi.PoliciesServiceUpdatePolicyAsync(
+    ApiResponse<ProtosOpenapiV1UpdatePolicyResponse> result = await policiesServiceApi.UpdatePolicyAsync(
         deploymentId,
         policyId,
         body

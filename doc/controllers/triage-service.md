@@ -11,12 +11,12 @@ TriageServiceApi triageServiceApi = client.TriageServiceApi;
 `TriageServiceApi`
 
 
-# Triage Service Bulk Triage
+# Bulk Triage
 
 Bulk triage your findings. You can select the findings to triage by passing in a list of finding IDs as issue_ids, or by passing in filter query parameters. You must specify the issue_type of the findings you want to bulk triage. One of new_triage_state or new_note is required. If specifying a new_triage_reason, you must also use new_triage_state=ignored. Some filters only apply for findings associated with a given product.
 
 ```csharp
-TriageServiceBulkTriageAsync(
+BulkTriageAsync(
     string deploymentSlug,
     Models.BulkTriageRequest body)
 ```
@@ -112,7 +112,7 @@ BulkTriageRequest body = new BulkTriageRequest
 
 try
 {
-    ApiResponse<BulkTriageResponse> result = await triageServiceApi.TriageServiceBulkTriageAsync(
+    ApiResponse<BulkTriageResponse> result = await triageServiceApi.BulkTriageAsync(
         deploymentSlug,
         body
     );

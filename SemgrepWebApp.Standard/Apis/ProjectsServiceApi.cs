@@ -30,11 +30,11 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="page">Optional parameter: .</param>
         /// <param name="pageSize">Optional parameter: Example: 100.</param>
         /// <returns>Returns the ApiResponse of Models.ListProjectsResponse response from the API call.</returns>
-        public ApiResponse<Models.ListProjectsResponse> ProjectsServiceListProjects(
+        public ApiResponse<Models.ListProjectsResponse> ListProjects(
                 string deploymentSlug,
                 long? page = null,
                 long? pageSize = 100L)
-            => CoreHelper.RunTask(ProjectsServiceListProjectsAsync(deploymentSlug, page, pageSize));
+            => CoreHelper.RunTask(ListProjectsAsync(deploymentSlug, page, pageSize));
 
         /// <summary>
         /// Request the list of projects that have been scanned or onboarded to Managed Scans. Does not return archived repositories. Returns 100 projects per page by default.
@@ -44,7 +44,7 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="pageSize">Optional parameter: Example: 100.</param>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of Models.ListProjectsResponse response from the API call.</returns>
-        public async Task<ApiResponse<Models.ListProjectsResponse>> ProjectsServiceListProjectsAsync(
+        public async Task<ApiResponse<Models.ListProjectsResponse>> ListProjectsAsync(
                 string deploymentSlug,
                 long? page = null,
                 long? pageSize = 100L,
@@ -65,10 +65,10 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="deploymentSlug">Required parameter: .</param>
         /// <param name="projectName">Required parameter: .</param>
         /// <returns>Returns the ApiResponse of Models.DeleteProjectResponse response from the API call.</returns>
-        public ApiResponse<Models.DeleteProjectResponse> ProjectsServiceDeleteProject(
+        public ApiResponse<Models.DeleteProjectResponse> DeleteProject(
                 string deploymentSlug,
                 string projectName)
-            => CoreHelper.RunTask(ProjectsServiceDeleteProjectAsync(deploymentSlug, projectName));
+            => CoreHelper.RunTask(DeleteProjectAsync(deploymentSlug, projectName));
 
         /// <summary>
         /// Delete a project for a deployment you have access to. This will also delete all of the associated findings.
@@ -77,7 +77,7 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="projectName">Required parameter: .</param>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of Models.DeleteProjectResponse response from the API call.</returns>
-        public async Task<ApiResponse<Models.DeleteProjectResponse>> ProjectsServiceDeleteProjectAsync(
+        public async Task<ApiResponse<Models.DeleteProjectResponse>> DeleteProjectAsync(
                 string deploymentSlug,
                 string projectName,
                 CancellationToken cancellationToken = default)
@@ -96,10 +96,10 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="deploymentSlug">Required parameter: .</param>
         /// <param name="projectName">Required parameter: .</param>
         /// <returns>Returns the ApiResponse of Models.GetProjectResponse response from the API call.</returns>
-        public ApiResponse<Models.GetProjectResponse> ProjectsServiceGetProject(
+        public ApiResponse<Models.GetProjectResponse> GetProject(
                 string deploymentSlug,
                 string projectName)
-            => CoreHelper.RunTask(ProjectsServiceGetProjectAsync(deploymentSlug, projectName));
+            => CoreHelper.RunTask(GetProjectAsync(deploymentSlug, projectName));
 
         /// <summary>
         /// Retrieve details for a single project associated with a deployment that you have access to.
@@ -108,7 +108,7 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="projectName">Required parameter: .</param>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of Models.GetProjectResponse response from the API call.</returns>
-        public async Task<ApiResponse<Models.GetProjectResponse>> ProjectsServiceGetProjectAsync(
+        public async Task<ApiResponse<Models.GetProjectResponse>> GetProjectAsync(
                 string deploymentSlug,
                 string projectName,
                 CancellationToken cancellationToken = default)
@@ -129,11 +129,11 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="projectName">Required parameter: .</param>
         /// <param name="body">Required parameter: .</param>
         /// <returns>Returns the ApiResponse of Models.UpdateProjectResponse response from the API call.</returns>
-        public ApiResponse<Models.UpdateProjectResponse> ProjectsServiceUpdateProject(
+        public ApiResponse<Models.UpdateProjectResponse> UpdateProject(
                 string deploymentSlug,
                 string projectName,
                 Models.UpdateProjectRequest body)
-            => CoreHelper.RunTask(ProjectsServiceUpdateProjectAsync(deploymentSlug, projectName, body));
+            => CoreHelper.RunTask(UpdateProjectAsync(deploymentSlug, projectName, body));
 
         /// <summary>
         /// Update attributes for the project using the value passed in to the request body.
@@ -144,7 +144,7 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="body">Required parameter: .</param>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of Models.UpdateProjectResponse response from the API call.</returns>
-        public async Task<ApiResponse<Models.UpdateProjectResponse>> ProjectsServiceUpdateProjectAsync(
+        public async Task<ApiResponse<Models.UpdateProjectResponse>> UpdateProjectAsync(
                 string deploymentSlug,
                 string projectName,
                 Models.UpdateProjectRequest body,
@@ -169,11 +169,11 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="projectName">Required parameter: .</param>
         /// <param name="body">Required parameter: .</param>
         /// <returns>Returns the ApiResponse of Models.ToggleProjectManagedScanResponse response from the API call.</returns>
-        public ApiResponse<Models.ToggleProjectManagedScanResponse> ProjectsServiceToggleProjectManagedScan(
+        public ApiResponse<Models.ToggleProjectManagedScanResponse> ToggleProjectManagedScan(
                 string deploymentSlug,
                 string projectName,
                 Models.ToggleProjectManagedScanRequest body)
-            => CoreHelper.RunTask(ProjectsServiceToggleProjectManagedScanAsync(deploymentSlug, projectName, body));
+            => CoreHelper.RunTask(ToggleProjectManagedScanAsync(deploymentSlug, projectName, body));
 
         /// <summary>
         /// Enable or disable.
@@ -185,7 +185,7 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="body">Required parameter: .</param>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of Models.ToggleProjectManagedScanResponse response from the API call.</returns>
-        public async Task<ApiResponse<Models.ToggleProjectManagedScanResponse>> ProjectsServiceToggleProjectManagedScanAsync(
+        public async Task<ApiResponse<Models.ToggleProjectManagedScanResponse>> ToggleProjectManagedScanAsync(
                 string deploymentSlug,
                 string projectName,
                 Models.ToggleProjectManagedScanRequest body,
@@ -211,11 +211,11 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="projectName">Required parameter: .</param>
         /// <param name="tags">Optional parameter: .</param>
         /// <returns>Returns the ApiResponse of Models.DeleteProjectTagsResponse response from the API call.</returns>
-        public ApiResponse<Models.DeleteProjectTagsResponse> ProjectsServiceDeleteProjectTags(
+        public ApiResponse<Models.DeleteProjectTagsResponse> DeleteProjectTags(
                 string deploymentSlug,
                 string projectName,
                 List<string> tags = null)
-            => CoreHelper.RunTask(ProjectsServiceDeleteProjectTagsAsync(deploymentSlug, projectName, tags));
+            => CoreHelper.RunTask(DeleteProjectTagsAsync(deploymentSlug, projectName, tags));
 
         /// <summary>
         /// Remove tags from a project for a deployment you have access to.
@@ -228,7 +228,7 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="tags">Optional parameter: .</param>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of Models.DeleteProjectTagsResponse response from the API call.</returns>
-        public async Task<ApiResponse<Models.DeleteProjectTagsResponse>> ProjectsServiceDeleteProjectTagsAsync(
+        public async Task<ApiResponse<Models.DeleteProjectTagsResponse>> DeleteProjectTagsAsync(
                 string deploymentSlug,
                 string projectName,
                 List<string> tags = null,
@@ -251,11 +251,11 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="projectName">Required parameter: .</param>
         /// <param name="body">Required parameter: .</param>
         /// <returns>Returns the ApiResponse of Models.AddProjectTagsResponse response from the API call.</returns>
-        public ApiResponse<Models.AddProjectTagsResponse> ProjectsServiceAddProjectTags(
+        public ApiResponse<Models.AddProjectTagsResponse> AddProjectTags(
                 string deploymentSlug,
                 string projectName,
                 Models.AddProjectTagsRequest body)
-            => CoreHelper.RunTask(ProjectsServiceAddProjectTagsAsync(deploymentSlug, projectName, body));
+            => CoreHelper.RunTask(AddProjectTagsAsync(deploymentSlug, projectName, body));
 
         /// <summary>
         /// Add tags to a project for a deployment you have access to.
@@ -266,7 +266,7 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="body">Required parameter: .</param>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of Models.AddProjectTagsResponse response from the API call.</returns>
-        public async Task<ApiResponse<Models.AddProjectTagsResponse>> ProjectsServiceAddProjectTagsAsync(
+        public async Task<ApiResponse<Models.AddProjectTagsResponse>> AddProjectTagsAsync(
                 string deploymentSlug,
                 string projectName,
                 Models.AddProjectTagsRequest body,

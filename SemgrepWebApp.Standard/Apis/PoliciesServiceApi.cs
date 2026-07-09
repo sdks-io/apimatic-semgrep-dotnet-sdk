@@ -23,21 +23,21 @@ namespace SemgrepWebApp.Standard.Apis
         internal PoliciesServiceApi(GlobalConfiguration globalConfiguration) : base(globalConfiguration) { }
 
         /// <summary>
-        /// PoliciesService_ListPolicies EndPoint.
+        /// ListPolicies EndPoint.
         /// </summary>
         /// <param name="deploymentId">Required parameter: .</param>
         /// <returns>Returns the ApiResponse of Models.ProtosOpenapiV1ListPoliciesResponse response from the API call.</returns>
-        public ApiResponse<Models.ProtosOpenapiV1ListPoliciesResponse> PoliciesServiceListPolicies(
+        public ApiResponse<Models.ProtosOpenapiV1ListPoliciesResponse> ListPolicies(
                 string deploymentId)
-            => CoreHelper.RunTask(PoliciesServiceListPoliciesAsync(deploymentId));
+            => CoreHelper.RunTask(ListPoliciesAsync(deploymentId));
 
         /// <summary>
-        /// PoliciesService_ListPolicies EndPoint.
+        /// ListPolicies EndPoint.
         /// </summary>
         /// <param name="deploymentId">Required parameter: .</param>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of Models.ProtosOpenapiV1ListPoliciesResponse response from the API call.</returns>
-        public async Task<ApiResponse<Models.ProtosOpenapiV1ListPoliciesResponse>> PoliciesServiceListPoliciesAsync(
+        public async Task<ApiResponse<Models.ProtosOpenapiV1ListPoliciesResponse>> ListPoliciesAsync(
                 string deploymentId,
                 CancellationToken cancellationToken = default)
             => await CreateApiCall<Models.ProtosOpenapiV1ListPoliciesResponse>()
@@ -49,22 +49,22 @@ namespace SemgrepWebApp.Standard.Apis
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
         /// <summary>
-        /// PoliciesService_ListPolicyRules EndPoint.
+        /// ListPolicyRules EndPoint.
         /// </summary>
         /// <param name="deploymentId">Required parameter: .</param>
         /// <param name="policyId">Required parameter: .</param>
         /// <param name="cursor">Optional parameter: .</param>
         /// <param name="limit">Optional parameter: .</param>
         /// <returns>Returns the ApiResponse of Models.ProtosOpenapiV1ListPolicyRulesResponse response from the API call.</returns>
-        public ApiResponse<Models.ProtosOpenapiV1ListPolicyRulesResponse> PoliciesServiceListPolicyRules(
+        public ApiResponse<Models.ProtosOpenapiV1ListPolicyRulesResponse> ListPolicyRules(
                 string deploymentId,
                 string policyId,
                 string cursor = null,
                 long? limit = null)
-            => CoreHelper.RunTask(PoliciesServiceListPolicyRulesAsync(deploymentId, policyId, cursor, limit));
+            => CoreHelper.RunTask(ListPolicyRulesAsync(deploymentId, policyId, cursor, limit));
 
         /// <summary>
-        /// PoliciesService_ListPolicyRules EndPoint.
+        /// ListPolicyRules EndPoint.
         /// </summary>
         /// <param name="deploymentId">Required parameter: .</param>
         /// <param name="policyId">Required parameter: .</param>
@@ -72,7 +72,7 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="limit">Optional parameter: .</param>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of Models.ProtosOpenapiV1ListPolicyRulesResponse response from the API call.</returns>
-        public async Task<ApiResponse<Models.ProtosOpenapiV1ListPolicyRulesResponse>> PoliciesServiceListPolicyRulesAsync(
+        public async Task<ApiResponse<Models.ProtosOpenapiV1ListPolicyRulesResponse>> ListPolicyRulesAsync(
                 string deploymentId,
                 string policyId,
                 string cursor = null,
@@ -90,27 +90,27 @@ namespace SemgrepWebApp.Standard.Apis
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
         /// <summary>
-        /// PoliciesService_UpdatePolicy EndPoint.
+        /// UpdatePolicy EndPoint.
         /// </summary>
         /// <param name="deploymentId">Required parameter: .</param>
         /// <param name="policyId">Required parameter: .</param>
         /// <param name="body">Required parameter: .</param>
         /// <returns>Returns the ApiResponse of Models.ProtosOpenapiV1UpdatePolicyResponse response from the API call.</returns>
-        public ApiResponse<Models.ProtosOpenapiV1UpdatePolicyResponse> PoliciesServiceUpdatePolicy(
+        public ApiResponse<Models.ProtosOpenapiV1UpdatePolicyResponse> UpdatePolicy(
                 string deploymentId,
                 string policyId,
                 Models.UpdatePolicyRequest body)
-            => CoreHelper.RunTask(PoliciesServiceUpdatePolicyAsync(deploymentId, policyId, body));
+            => CoreHelper.RunTask(UpdatePolicyAsync(deploymentId, policyId, body));
 
         /// <summary>
-        /// PoliciesService_UpdatePolicy EndPoint.
+        /// UpdatePolicy EndPoint.
         /// </summary>
         /// <param name="deploymentId">Required parameter: .</param>
         /// <param name="policyId">Required parameter: .</param>
         /// <param name="body">Required parameter: .</param>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of Models.ProtosOpenapiV1UpdatePolicyResponse response from the API call.</returns>
-        public async Task<ApiResponse<Models.ProtosOpenapiV1UpdatePolicyResponse>> PoliciesServiceUpdatePolicyAsync(
+        public async Task<ApiResponse<Models.ProtosOpenapiV1UpdatePolicyResponse>> UpdatePolicyAsync(
                 string deploymentId,
                 string policyId,
                 Models.UpdatePolicyRequest body,

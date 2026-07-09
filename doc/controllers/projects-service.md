@@ -10,21 +10,21 @@ ProjectsServiceApi projectsServiceApi = client.ProjectsServiceApi;
 
 ## Methods
 
-* [Projects Service List Projects](../../doc/controllers/projects-service.md#projects-service-list-projects)
-* [Projects Service Delete Project](../../doc/controllers/projects-service.md#projects-service-delete-project)
-* [Projects Service Get Project](../../doc/controllers/projects-service.md#projects-service-get-project)
-* [Projects Service Update Project](../../doc/controllers/projects-service.md#projects-service-update-project)
-* [Projects Service Toggle Project Managed Scan](../../doc/controllers/projects-service.md#projects-service-toggle-project-managed-scan)
-* [Projects Service Delete Project Tags](../../doc/controllers/projects-service.md#projects-service-delete-project-tags)
-* [Projects Service Add Project Tags](../../doc/controllers/projects-service.md#projects-service-add-project-tags)
+* [List Projects](../../doc/controllers/projects-service.md#list-projects)
+* [Delete Project](../../doc/controllers/projects-service.md#delete-project)
+* [Get Project](../../doc/controllers/projects-service.md#get-project)
+* [Update Project](../../doc/controllers/projects-service.md#update-project)
+* [Toggle Project Managed Scan](../../doc/controllers/projects-service.md#toggle-project-managed-scan)
+* [Delete Project Tags](../../doc/controllers/projects-service.md#delete-project-tags)
+* [Add Project Tags](../../doc/controllers/projects-service.md#add-project-tags)
 
 
-# Projects Service List Projects
+# List Projects
 
 Request the list of projects that have been scanned or onboarded to Managed Scans. Does not return archived repositories. Returns 100 projects per page by default.
 
 ```csharp
-ProjectsServiceListProjectsAsync(
+ListProjectsAsync(
     string deploymentSlug,
     long? page = null,
     long? pageSize = 100L)
@@ -56,7 +56,7 @@ long? page = 1L;
 long? pageSize = 100L;
 try
 {
-    ApiResponse<ListProjectsResponse> result = await projectsServiceApi.ProjectsServiceListProjectsAsync(
+    ApiResponse<ListProjectsResponse> result = await projectsServiceApi.ListProjectsAsync(
         deploymentSlug,
         page,
         pageSize
@@ -69,12 +69,12 @@ catch (ApiException e)
 ```
 
 
-# Projects Service Delete Project
+# Delete Project
 
 Delete a project for a deployment you have access to. This will also delete all of the associated findings.
 
 ```csharp
-ProjectsServiceDeleteProjectAsync(
+DeleteProjectAsync(
     string deploymentSlug,
     string projectName)
 ```
@@ -103,7 +103,7 @@ string deploymentSlug = "your-deployment";
 string projectName = "organization/project";
 try
 {
-    ApiResponse<DeleteProjectResponse> result = await projectsServiceApi.ProjectsServiceDeleteProjectAsync(
+    ApiResponse<DeleteProjectResponse> result = await projectsServiceApi.DeleteProjectAsync(
         deploymentSlug,
         projectName
     );
@@ -115,12 +115,12 @@ catch (ApiException e)
 ```
 
 
-# Projects Service Get Project
+# Get Project
 
 Retrieve details for a single project associated with a deployment that you have access to.
 
 ```csharp
-ProjectsServiceGetProjectAsync(
+GetProjectAsync(
     string deploymentSlug,
     string projectName)
 ```
@@ -149,7 +149,7 @@ string deploymentSlug = "your-deployment";
 string projectName = "organization/project";
 try
 {
-    ApiResponse<GetProjectResponse> result = await projectsServiceApi.ProjectsServiceGetProjectAsync(
+    ApiResponse<GetProjectResponse> result = await projectsServiceApi.GetProjectAsync(
         deploymentSlug,
         projectName
     );
@@ -161,14 +161,14 @@ catch (ApiException e)
 ```
 
 
-# Projects Service Update Project
+# Update Project
 
 Update attributes for the project using the value passed in to the request body.
 
 Note: The only attribute that is supported as of January 2023 is `tags`.
 
 ```csharp
-ProjectsServiceUpdateProjectAsync(
+UpdateProjectAsync(
     string deploymentSlug,
     string projectName,
     Models.UpdateProjectRequest body)
@@ -210,7 +210,7 @@ UpdateProjectRequest body = new UpdateProjectRequest
 
 try
 {
-    ApiResponse<UpdateProjectResponse> result = await projectsServiceApi.ProjectsServiceUpdateProjectAsync(
+    ApiResponse<UpdateProjectResponse> result = await projectsServiceApi.UpdateProjectAsync(
         deploymentSlug,
         projectName,
         body
@@ -223,14 +223,14 @@ catch (ApiException e)
 ```
 
 
-# Projects Service Toggle Project Managed Scan
+# Toggle Project Managed Scan
 
 Enable or disable
 [Semgrep Managed Scans](/docs/deployment/managed-scanning/overview)
 for a project.
 
 ```csharp
-ProjectsServiceToggleProjectManagedScanAsync(
+ToggleProjectManagedScanAsync(
     string deploymentSlug,
     string projectName,
     Models.ToggleProjectManagedScanRequest body)
@@ -267,7 +267,7 @@ ToggleProjectManagedScanRequest body = new ToggleProjectManagedScanRequest
 
 try
 {
-    ApiResponse<ToggleProjectManagedScanResponse> result = await projectsServiceApi.ProjectsServiceToggleProjectManagedScanAsync(
+    ApiResponse<ToggleProjectManagedScanResponse> result = await projectsServiceApi.ToggleProjectManagedScanAsync(
         deploymentSlug,
         projectName,
         body
@@ -280,7 +280,7 @@ catch (ApiException e)
 ```
 
 
-# Projects Service Delete Project Tags
+# Delete Project Tags
 
 Remove tags from a project for a deployment you have access to.
 
@@ -289,7 +289,7 @@ them from the requested project. Any other projects associated with the requeste
 tag will remain unaffected.
 
 ```csharp
-ProjectsServiceDeleteProjectTagsAsync(
+DeleteProjectTagsAsync(
     string deploymentSlug,
     string projectName,
     List<string> tags = null)
@@ -325,7 +325,7 @@ List<string> tags = new List<string>
 
 try
 {
-    ApiResponse<DeleteProjectTagsResponse> result = await projectsServiceApi.ProjectsServiceDeleteProjectTagsAsync(
+    ApiResponse<DeleteProjectTagsResponse> result = await projectsServiceApi.DeleteProjectTagsAsync(
         deploymentSlug,
         projectName,
         tags
@@ -338,14 +338,14 @@ catch (ApiException e)
 ```
 
 
-# Projects Service Add Project Tags
+# Add Project Tags
 
 Add tags to a project for a deployment you have access to.
 
 Any project tags that do not already exist for the deployment will be created automatically and associated with the project.
 
 ```csharp
-ProjectsServiceAddProjectTagsAsync(
+AddProjectTagsAsync(
     string deploymentSlug,
     string projectName,
     Models.AddProjectTagsRequest body)
@@ -386,7 +386,7 @@ AddProjectTagsRequest body = new AddProjectTagsRequest
 
 try
 {
-    ApiResponse<AddProjectTagsResponse> result = await projectsServiceApi.ProjectsServiceAddProjectTagsAsync(
+    ApiResponse<AddProjectTagsResponse> result = await projectsServiceApi.AddProjectTagsAsync(
         deploymentSlug,
         projectName,
         body

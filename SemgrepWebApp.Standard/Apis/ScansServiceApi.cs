@@ -28,10 +28,10 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="deploymentId">Required parameter: .</param>
         /// <param name="scanId">Required parameter: .</param>
         /// <returns>Returns the ApiResponse of Models.ProtosOpenapiV1GetScanResponse response from the API call.</returns>
-        public ApiResponse<Models.ProtosOpenapiV1GetScanResponse> ScansServiceGetScan(
+        public ApiResponse<Models.ProtosOpenapiV1GetScanResponse> GetScan(
                 string deploymentId,
                 string scanId)
-            => CoreHelper.RunTask(ScansServiceGetScanAsync(deploymentId, scanId));
+            => CoreHelper.RunTask(GetScanAsync(deploymentId, scanId));
 
         /// <summary>
         /// Request the details of a scan including the associated deployment, repository, and commit information.
@@ -40,7 +40,7 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="scanId">Required parameter: .</param>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of Models.ProtosOpenapiV1GetScanResponse response from the API call.</returns>
-        public async Task<ApiResponse<Models.ProtosOpenapiV1GetScanResponse>> ScansServiceGetScanAsync(
+        public async Task<ApiResponse<Models.ProtosOpenapiV1GetScanResponse>> GetScanAsync(
                 string deploymentId,
                 string scanId,
                 CancellationToken cancellationToken = default)
@@ -59,10 +59,10 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="deploymentId">Required parameter: .</param>
         /// <param name="body">Required parameter: .</param>
         /// <returns>Returns the ApiResponse of Models.ProtosOpenapiV1SearchScansResponse response from the API call.</returns>
-        public ApiResponse<Models.ProtosOpenapiV1SearchScansResponse> ScansServiceSearchScans(
+        public ApiResponse<Models.ProtosOpenapiV1SearchScansResponse> SearchScans(
                 string deploymentId,
                 Models.SearchScansRequest body)
-            => CoreHelper.RunTask(ScansServiceSearchScansAsync(deploymentId, body));
+            => CoreHelper.RunTask(SearchScansAsync(deploymentId, body));
 
         /// <summary>
         /// List the scans associated with a particular repository over the past 30 days.
@@ -71,7 +71,7 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="body">Required parameter: .</param>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of Models.ProtosOpenapiV1SearchScansResponse response from the API call.</returns>
-        public async Task<ApiResponse<Models.ProtosOpenapiV1SearchScansResponse>> ScansServiceSearchScansAsync(
+        public async Task<ApiResponse<Models.ProtosOpenapiV1SearchScansResponse>> SearchScansAsync(
                 string deploymentId,
                 Models.SearchScansRequest body,
                 CancellationToken cancellationToken = default)

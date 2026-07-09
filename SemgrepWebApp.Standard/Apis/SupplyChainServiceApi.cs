@@ -23,24 +23,24 @@ namespace SemgrepWebApp.Standard.Apis
         internal SupplyChainServiceApi(GlobalConfiguration globalConfiguration) : base(globalConfiguration) { }
 
         /// <summary>
-        /// SupplyChainService_ListDependencies EndPoint.
+        /// ListDependencies EndPoint.
         /// </summary>
         /// <param name="deploymentId">Required parameter: .</param>
         /// <param name="body">Required parameter: .</param>
         /// <returns>Returns the ApiResponse of Models.ListDependenciesResponse response from the API call.</returns>
-        public ApiResponse<Models.ListDependenciesResponse> SupplyChainServiceListDependencies(
+        public ApiResponse<Models.ListDependenciesResponse> ListDependencies(
                 string deploymentId,
                 Models.ListDependenciesRequest body)
-            => CoreHelper.RunTask(SupplyChainServiceListDependenciesAsync(deploymentId, body));
+            => CoreHelper.RunTask(ListDependenciesAsync(deploymentId, body));
 
         /// <summary>
-        /// SupplyChainService_ListDependencies EndPoint.
+        /// ListDependencies EndPoint.
         /// </summary>
         /// <param name="deploymentId">Required parameter: .</param>
         /// <param name="body">Required parameter: .</param>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of Models.ListDependenciesResponse response from the API call.</returns>
-        public async Task<ApiResponse<Models.ListDependenciesResponse>> SupplyChainServiceListDependenciesAsync(
+        public async Task<ApiResponse<Models.ListDependenciesResponse>> ListDependenciesAsync(
                 string deploymentId,
                 Models.ListDependenciesRequest body,
                 CancellationToken cancellationToken = default)
@@ -55,24 +55,24 @@ namespace SemgrepWebApp.Standard.Apis
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
         /// <summary>
-        /// SupplyChainService_ListRepositoriesForDependencies EndPoint.
+        /// ListRepositoriesForDependencies EndPoint.
         /// </summary>
         /// <param name="deploymentId">Required parameter: .</param>
         /// <param name="body">Required parameter: .</param>
         /// <returns>Returns the ApiResponse of Models.ListRepositoriesForDependenciesResponse response from the API call.</returns>
-        public ApiResponse<Models.ListRepositoriesForDependenciesResponse> SupplyChainServiceListRepositoriesForDependencies(
+        public ApiResponse<Models.ListRepositoriesForDependenciesResponse> ListRepositoriesForDependencies(
                 string deploymentId,
                 Models.ListRepositoriesForDependenciesRequest body)
-            => CoreHelper.RunTask(SupplyChainServiceListRepositoriesForDependenciesAsync(deploymentId, body));
+            => CoreHelper.RunTask(ListRepositoriesForDependenciesAsync(deploymentId, body));
 
         /// <summary>
-        /// SupplyChainService_ListRepositoriesForDependencies EndPoint.
+        /// ListRepositoriesForDependencies EndPoint.
         /// </summary>
         /// <param name="deploymentId">Required parameter: .</param>
         /// <param name="body">Required parameter: .</param>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of Models.ListRepositoriesForDependenciesResponse response from the API call.</returns>
-        public async Task<ApiResponse<Models.ListRepositoriesForDependenciesResponse>> SupplyChainServiceListRepositoriesForDependenciesAsync(
+        public async Task<ApiResponse<Models.ListRepositoriesForDependenciesResponse>> ListRepositoriesForDependenciesAsync(
                 string deploymentId,
                 Models.ListRepositoriesForDependenciesRequest body,
                 CancellationToken cancellationToken = default)
@@ -87,27 +87,27 @@ namespace SemgrepWebApp.Standard.Apis
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
         /// <summary>
-        /// SupplyChainService_ListLockfilesForDependencies EndPoint.
+        /// ListLockfilesForDependencies EndPoint.
         /// </summary>
         /// <param name="deploymentId">Required parameter: .</param>
         /// <param name="repositoryId">Required parameter: .</param>
         /// <param name="body">Required parameter: .</param>
         /// <returns>Returns the ApiResponse of Models.ListLockfilesForDependenciesResponse response from the API call.</returns>
-        public ApiResponse<Models.ListLockfilesForDependenciesResponse> SupplyChainServiceListLockfilesForDependencies(
+        public ApiResponse<Models.ListLockfilesForDependenciesResponse> ListLockfilesForDependencies(
                 string deploymentId,
                 string repositoryId,
                 Models.ListLockfilesForDependenciesRequest body)
-            => CoreHelper.RunTask(SupplyChainServiceListLockfilesForDependenciesAsync(deploymentId, repositoryId, body));
+            => CoreHelper.RunTask(ListLockfilesForDependenciesAsync(deploymentId, repositoryId, body));
 
         /// <summary>
-        /// SupplyChainService_ListLockfilesForDependencies EndPoint.
+        /// ListLockfilesForDependencies EndPoint.
         /// </summary>
         /// <param name="deploymentId">Required parameter: .</param>
         /// <param name="repositoryId">Required parameter: .</param>
         /// <param name="body">Required parameter: .</param>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of Models.ListLockfilesForDependenciesResponse response from the API call.</returns>
-        public async Task<ApiResponse<Models.ListLockfilesForDependenciesResponse>> SupplyChainServiceListLockfilesForDependenciesAsync(
+        public async Task<ApiResponse<Models.ListLockfilesForDependenciesResponse>> ListLockfilesForDependenciesAsync(
                 string deploymentId,
                 string repositoryId,
                 Models.ListLockfilesForDependenciesRequest body,
@@ -124,24 +124,24 @@ namespace SemgrepWebApp.Standard.Apis
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
         /// <summary>
-        /// SupplyChainService_CreateSbomExport EndPoint.
+        /// CreateSbomExport EndPoint.
         /// </summary>
         /// <param name="deploymentId">Required parameter: .</param>
         /// <param name="body">Required parameter: .</param>
         /// <returns>Returns the ApiResponse of Models.CreateSbomExportResponse response from the API call.</returns>
-        public ApiResponse<Models.CreateSbomExportResponse> SupplyChainServiceCreateSbomExport(
+        public ApiResponse<Models.CreateSbomExportResponse> CreateSbomExport(
                 string deploymentId,
                 Models.CreateSbomExportRequest body)
-            => CoreHelper.RunTask(SupplyChainServiceCreateSbomExportAsync(deploymentId, body));
+            => CoreHelper.RunTask(CreateSbomExportAsync(deploymentId, body));
 
         /// <summary>
-        /// SupplyChainService_CreateSbomExport EndPoint.
+        /// CreateSbomExport EndPoint.
         /// </summary>
         /// <param name="deploymentId">Required parameter: .</param>
         /// <param name="body">Required parameter: .</param>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of Models.CreateSbomExportResponse response from the API call.</returns>
-        public async Task<ApiResponse<Models.CreateSbomExportResponse>> SupplyChainServiceCreateSbomExportAsync(
+        public async Task<ApiResponse<Models.CreateSbomExportResponse>> CreateSbomExportAsync(
                 string deploymentId,
                 Models.CreateSbomExportRequest body,
                 CancellationToken cancellationToken = default)
@@ -156,24 +156,24 @@ namespace SemgrepWebApp.Standard.Apis
               .ExecuteAsync(cancellationToken).ConfigureAwait(false);
 
         /// <summary>
-        /// SupplyChainService_GetSbomExport EndPoint.
+        /// GetSbomExport EndPoint.
         /// </summary>
         /// <param name="deploymentId">Required parameter: .</param>
         /// <param name="taskToken">Required parameter: .</param>
         /// <returns>Returns the ApiResponse of Models.GetSbomExportResponse response from the API call.</returns>
-        public ApiResponse<Models.GetSbomExportResponse> SupplyChainServiceGetSbomExport(
+        public ApiResponse<Models.GetSbomExportResponse> GetSbomExport(
                 string deploymentId,
                 string taskToken)
-            => CoreHelper.RunTask(SupplyChainServiceGetSbomExportAsync(deploymentId, taskToken));
+            => CoreHelper.RunTask(GetSbomExportAsync(deploymentId, taskToken));
 
         /// <summary>
-        /// SupplyChainService_GetSbomExport EndPoint.
+        /// GetSbomExport EndPoint.
         /// </summary>
         /// <param name="deploymentId">Required parameter: .</param>
         /// <param name="taskToken">Required parameter: .</param>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of Models.GetSbomExportResponse response from the API call.</returns>
-        public async Task<ApiResponse<Models.GetSbomExportResponse>> SupplyChainServiceGetSbomExportAsync(
+        public async Task<ApiResponse<Models.GetSbomExportResponse>> GetSbomExportAsync(
                 string deploymentId,
                 string taskToken,
                 CancellationToken cancellationToken = default)

@@ -28,10 +28,10 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="deploymentId">Required parameter: .</param>
         /// <param name="externalTicketId">Required parameter: .</param>
         /// <returns>Returns the ApiResponse of Models.ProtosOpenapiV1DeleteTicketResponse response from the API call.</returns>
-        public ApiResponse<Models.ProtosOpenapiV1DeleteTicketResponse> TicketingServiceDeleteTicket(
+        public ApiResponse<Models.ProtosOpenapiV1DeleteTicketResponse> DeleteTicket(
                 string deploymentId,
                 long externalTicketId)
-            => CoreHelper.RunTask(TicketingServiceDeleteTicketAsync(deploymentId, externalTicketId));
+            => CoreHelper.RunTask(DeleteTicketAsync(deploymentId, externalTicketId));
 
         /// <summary>
         /// Unlink a Jira ticket by its ID.
@@ -40,7 +40,7 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="externalTicketId">Required parameter: .</param>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of Models.ProtosOpenapiV1DeleteTicketResponse response from the API call.</returns>
-        public async Task<ApiResponse<Models.ProtosOpenapiV1DeleteTicketResponse>> TicketingServiceDeleteTicketAsync(
+        public async Task<ApiResponse<Models.ProtosOpenapiV1DeleteTicketResponse>> DeleteTicketAsync(
                 string deploymentId,
                 long externalTicketId,
                 CancellationToken cancellationToken = default)
@@ -59,10 +59,10 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="deploymentId">Required parameter: .</param>
         /// <param name="body">Required parameter: .</param>
         /// <returns>Returns the ApiResponse of Models.ProtosOpenapiV1LinkTicketResponse response from the API call.</returns>
-        public ApiResponse<Models.ProtosOpenapiV1LinkTicketResponse> TicketingServiceLinkTicket(
+        public ApiResponse<Models.ProtosOpenapiV1LinkTicketResponse> LinkTicket(
                 string deploymentId,
                 Models.LinkTicketRequest body)
-            => CoreHelper.RunTask(TicketingServiceLinkTicketAsync(deploymentId, body));
+            => CoreHelper.RunTask(LinkTicketAsync(deploymentId, body));
 
         /// <summary>
         /// Link an existing external ticket (e.g. Jira) to one or more Semgrep findings by providing the ticket URL and a list of finding IDs. This does not create a ticket in your issue tracker — it only records the association in Semgrep. If a finding is already linked to a different ticket, the existing link is replaced. Requires a configured ticketing integration.
@@ -71,7 +71,7 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="body">Required parameter: .</param>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of Models.ProtosOpenapiV1LinkTicketResponse response from the API call.</returns>
-        public async Task<ApiResponse<Models.ProtosOpenapiV1LinkTicketResponse>> TicketingServiceLinkTicketAsync(
+        public async Task<ApiResponse<Models.ProtosOpenapiV1LinkTicketResponse>> LinkTicketAsync(
                 string deploymentId,
                 Models.LinkTicketRequest body,
                 CancellationToken cancellationToken = default)
@@ -91,10 +91,10 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="deploymentId">Required parameter: .</param>
         /// <param name="body">Required parameter: .</param>
         /// <returns>Returns the ApiResponse of Models.ProtosOpenapiV1UnlinkTicketResponse response from the API call.</returns>
-        public ApiResponse<Models.ProtosOpenapiV1UnlinkTicketResponse> TicketingServiceUnlinkTicket(
+        public ApiResponse<Models.ProtosOpenapiV1UnlinkTicketResponse> UnlinkTicket(
                 string deploymentId,
                 Models.UnlinkTicketRequest body)
-            => CoreHelper.RunTask(TicketingServiceUnlinkTicketAsync(deploymentId, body));
+            => CoreHelper.RunTask(UnlinkTicketAsync(deploymentId, body));
 
         /// <summary>
         /// Remove the ticket association from one or more Semgrep findings by providing a list of finding IDs. This does not delete the ticket in your issue tracker — it only removes the association in Semgrep.
@@ -103,7 +103,7 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="body">Required parameter: .</param>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of Models.ProtosOpenapiV1UnlinkTicketResponse response from the API call.</returns>
-        public async Task<ApiResponse<Models.ProtosOpenapiV1UnlinkTicketResponse>> TicketingServiceUnlinkTicketAsync(
+        public async Task<ApiResponse<Models.ProtosOpenapiV1UnlinkTicketResponse>> UnlinkTicketAsync(
                 string deploymentId,
                 Models.UnlinkTicketRequest body,
                 CancellationToken cancellationToken = default)
@@ -123,10 +123,10 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="deploymentSlug">Required parameter: .</param>
         /// <param name="body">Required parameter: .</param>
         /// <returns>Returns the ApiResponse of Models.ProtosOpenapiV1CreateTicketResponse response from the API call.</returns>
-        public ApiResponse<Models.ProtosOpenapiV1CreateTicketResponse> TicketingServiceCreateTicket(
+        public ApiResponse<Models.ProtosOpenapiV1CreateTicketResponse> CreateTicket(
                 string deploymentSlug,
                 Models.CreateTicketRequest body)
-            => CoreHelper.RunTask(TicketingServiceCreateTicketAsync(deploymentSlug, body));
+            => CoreHelper.RunTask(CreateTicketAsync(deploymentSlug, body));
 
         /// <summary>
         /// Create Jira tickets for your findings. You can create tickets by passing in a list of issue_ids or by passing in filter query parameters to dynamically select findings. If passing in filters, Semgrep will skip already ticketed findings. This endpoint is synchronous, so it may take some time for your request to resolve. Unlike creating tickets in-app, if ticket creation fails we won't automatically retry. This endpoint accepts a limit parameter (defaulting to 20) to limit the number of tickets created per request. If you specify a list of issue_ids greater than this limit, or your selected filters match on a number of issues greater than this limit, issues that were not ticketed are included in the Failed part of the response object. You can send another request to create tickets for these skipped issues. By default, findings belonging to the same repository and the same rule will be grouped together into a single Jira ticket. You can override this using the group_issues query parameter. Up to 50 issues can be grouped into a single ticket. You can optionally override the Jira project you create tickets in by passing in a Jira project ID as jira_project_id (the numeric ID rather than the project key). You can fetch this ID using the Jira API.
@@ -135,7 +135,7 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="body">Required parameter: .</param>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of Models.ProtosOpenapiV1CreateTicketResponse response from the API call.</returns>
-        public async Task<ApiResponse<Models.ProtosOpenapiV1CreateTicketResponse>> TicketingServiceCreateTicketAsync(
+        public async Task<ApiResponse<Models.ProtosOpenapiV1CreateTicketResponse>> CreateTicketAsync(
                 string deploymentSlug,
                 Models.CreateTicketRequest body,
                 CancellationToken cancellationToken = default)

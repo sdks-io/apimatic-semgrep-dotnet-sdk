@@ -49,7 +49,7 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="isMalicious">Optional parameter: .</param>
         /// <param name="clickToFixPrState">Optional parameter: Example: .</param>
         /// <returns>Returns the ApiResponse of Models.ApiV1DeploymentsFindingsResponse response from the API call.</returns>
-        public ApiResponse<Models.ApiV1DeploymentsFindingsResponse> FindingsServiceListFindings(
+        public ApiResponse<Models.ApiV1DeploymentsFindingsResponse> ListFindings(
                 string deploymentSlug,
                 Models.IssueType2? issueType = Models.IssueType2.Sast,
                 double? since = null,
@@ -72,7 +72,7 @@ namespace SemgrepWebApp.Standard.Apis
                 Models.Transitivities2? transitivities = null,
                 bool? isMalicious = null,
                 Models.ClickToFixPrState? clickToFixPrState = null)
-            => CoreHelper.RunTask(FindingsServiceListFindingsAsync(deploymentSlug, issueType, since, page, dedup, pageSize, repos, repositoryIds, status, triageReasons, severities, mRef, policies, rules, categories, confidence, autotriageVerdict, componentTags, exposures, transitivities, isMalicious, clickToFixPrState));
+            => CoreHelper.RunTask(ListFindingsAsync(deploymentSlug, issueType, since, page, dedup, pageSize, repos, repositoryIds, status, triageReasons, severities, mRef, policies, rules, categories, confidence, autotriageVerdict, componentTags, exposures, transitivities, isMalicious, clickToFixPrState));
 
         /// <summary>
         /// Request the list of code, supply chain, or AI-powered scan findings in an organization, paginated in pages of 100 entries and limited by the `since` timestamp. Findings are returned by `relevant_since` descending (see `since` in the Query Parameters list). Examples: List SAST findings with pagination, List SCA findings since timestamp, List AI-powered scan findings, List findings with filters.
@@ -101,7 +101,7 @@ namespace SemgrepWebApp.Standard.Apis
         /// <param name="clickToFixPrState">Optional parameter: Example: .</param>
         /// <param name="cancellationToken"> cancellationToken. </param>
         /// <returns>Returns the ApiResponse of Models.ApiV1DeploymentsFindingsResponse response from the API call.</returns>
-        public async Task<ApiResponse<Models.ApiV1DeploymentsFindingsResponse>> FindingsServiceListFindingsAsync(
+        public async Task<ApiResponse<Models.ApiV1DeploymentsFindingsResponse>> ListFindingsAsync(
                 string deploymentSlug,
                 Models.IssueType2? issueType = Models.IssueType2.Sast,
                 double? since = null,
